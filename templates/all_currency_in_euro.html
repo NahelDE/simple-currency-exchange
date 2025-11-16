@@ -1,0 +1,22 @@
+<a href="{{ url_for('index') }}">Index</a>
+
+<p>  {{ date }} </p>
+
+<table>
+    <thead>
+    <tr>
+        <th scope="col"> Name</th>
+        <th scope="col"> Identifier</th>
+        <th scope="col"> Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for currency_name, currency_value in currency.items() %}
+        <tr>
+            <th scope="row"> {{ currency_value[0] }} </th>
+            <td> {{ currency_name }} </td>
+            <td> {{ currency_value[1] }} </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
